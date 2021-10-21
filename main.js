@@ -20,25 +20,6 @@ class Cars{
 }
 const car1 = new Cars(5,1600,"green")
 
-btn.onclick =()=>{
-const car2 = new Cars(wheels.value,engine.value,color.value)
-console.log(car2);
-container.innerHTML = 
-`<table>
-       <tr>
-           <th>numberOfWheels</th>
-           <th>engineCapacity</th>
-           <th>color</th>
-       </tr>
-       <tr>
-           <td>${wheels.value}</td>
-           <td>${engine.value}</td>
-           <td>${color.value}</td>
-       </tr>
-</table>
-`
-}
-
 //////////////////////////////////////////////////////////////////////// honda
 class Honda extends Cars{
     getComplicated(){
@@ -66,6 +47,7 @@ class Pego extends Cars{
     }
 }
 const pego = new Pego(8,2500,"gray")
+
 // console.log(pego.getComplicated());
 
 //////////////////////////////////////////////////////////////////////// Mazada
@@ -79,3 +61,68 @@ class Mazda extends Cars{
 }
 const mazda = new Mazda(10,3000,"yellow")
 // console.log(mazda.getComplicated());
+
+
+btn.onclick =()=>{
+
+switch (typeColor.value) {
+        case "honda":
+                let hondaCar = new Honda(wheels.value,engine.value,color.value)
+                    container.innerHTML = 
+                `<table>
+                <tr>
+                    <th>numberOfWheels</th>
+                    <th>engineCapacity</th>
+                    <th>color</th>
+                </tr>
+                <tr>
+                    <td>${hondaCar.numberOfWheels}</td>
+                    <td>${hondaCar.engineCapacity}</td>
+                    <td>${hondaCar.color}</td>
+                </tr>
+         </table>
+         `
+            break;
+            case "mazda":
+                let mazdaCar = new Mazda(wheels.value,engine.value,color.value)
+                    container.innerHTML = 
+                `<table>
+                <tr>
+                    <th>numberOfWheels</th>
+                    <th>engineCapacity</th>
+                    <th>color</th>
+                </tr>
+                <tr>
+                    <td>${mazdaCar.numberOfWheels}</td>
+                    <td>${mazdaCar.engineCapacity}</td>
+                    <td>${mazdaCar.color}</td>
+                </tr>
+         </table>
+         `
+       
+            break;
+            case "pego":
+                let pegoCar = new Pego(wheels.value,engine.value,color.value)
+                container.innerHTML = 
+            `<table>
+                 <tr>
+                      <th>numberOfWheels</th>
+                      <th>engineCapacity</th>
+                      <th>color</th>
+                 </tr>
+                 <tr>
+                      <td>${pegoCar.numberOfWheels}</td>
+                      <td>${pegoCar.engineCapacity}</td>
+                      <td>${pegoCar.color}</td>
+                </tr>
+            </table>
+                 `
+            break;
+    
+        default:
+            
+            alert("there is not types of cars")
+            
+            break;
+    }
+    }
