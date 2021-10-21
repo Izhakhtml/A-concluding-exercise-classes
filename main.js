@@ -7,10 +7,10 @@ class Cars{
         this.engineCapacity = engineCapacity
         this.color = color
     }
-    returnComplicated(){
+    getComplicated(){
         return `number Of Wheels:${this.engineCapacity} engine Capacity:${this.engineCapacity} color:${this.color}`
     }
-    static returnNumbersOfObject(array){
+    static getNumberOfWheels(array){
     let max = array[0] 
     array.forEach(element => {
        if(max.engineCapacity < element.engineCapacity) max = element;
@@ -42,10 +42,10 @@ container.innerHTML =
 //////////////////////////////////////////////////////////////////////// honda
 class Honda extends Cars{
     getComplicated(){
-        return `${super.returnComplicated()} name:honda`
+        return `${super.getComplicated()} Name of car:honda`
     }
     getUpperCase(){
-        return `${super.returnComplicated().toLocaleUpperCase()}`
+        return `${this.getComplicated().toLocaleUpperCase()}`
     }
     get result(){
         return this.getUpperCase()
@@ -57,11 +57,12 @@ console.log(honda.result);
 
 //////////////////////////////////////////////////////////////////////// pego
 class Pego extends Cars{
+
     getComplicated(){
-        return `${super.returnComplicated()} name:pego`
+        return `${super.getComplicated()} Name of car:pego`
     }
-    getCourse(array){
-        return `${super.returnNumbersOfObject(array)}`
+    getBigEngine(array){
+        return `${super.getNumberOfWheels(array)}`
     }
 }
 const pego = new Pego(8,2500,"gray")
@@ -70,7 +71,10 @@ const pego = new Pego(8,2500,"gray")
 //////////////////////////////////////////////////////////////////////// Mazada
 class Mazda extends Cars{
     getComplicated(){
-        return `${super.returnComplicated()} name:mazda`
+        return `${super.getComplicated()} Name of car:mazda`
+    }
+    getBigEngine(array){
+        return `${super.getNumberOfWheels(array)}`
     }
 }
 const mazda = new Mazda(10,3000,"yellow")
