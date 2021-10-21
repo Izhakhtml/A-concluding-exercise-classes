@@ -65,7 +65,7 @@ const mazda = new Mazda(10,3000,"yellow")
 
 btn.onclick =()=>{
 
-switch (typeColor.value) {
+switch (typeCar.value) {
         case "honda":
                 let hondaCar = new Honda(wheels.value,engine.value,color.value)
                 container.innerHTML = 
