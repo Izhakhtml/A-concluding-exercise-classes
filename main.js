@@ -68,39 +68,42 @@ btn.onclick =()=>{
 switch (typeColor.value) {
         case "honda":
                 let hondaCar = new Honda(wheels.value,engine.value,color.value)
-                    container.innerHTML = 
+                container.innerHTML = 
                 `<table>
                 <tr>
                     <th>numberOfWheels</th>
                     <th>engineCapacity</th>
                     <th>color</th>
+                    <th>type of car</th>
                 </tr>
                 <tr>
                     <td>${hondaCar.numberOfWheels}</td>
                     <td>${hondaCar.engineCapacity}</td>
                     <td>${hondaCar.color}</td>
+                    <td>honda</td>
                 </tr>
          </table>
          `
-            break;
+            return;
             case "mazda":
                 let mazdaCar = new Mazda(wheels.value,engine.value,color.value)
-                    container.innerHTML = 
+                container.innerHTML = 
                 `<table>
                 <tr>
                     <th>numberOfWheels</th>
                     <th>engineCapacity</th>
                     <th>color</th>
+                    <th>type of car</th>
                 </tr>
                 <tr>
                     <td>${mazdaCar.numberOfWheels}</td>
                     <td>${mazdaCar.engineCapacity}</td>
                     <td>${mazdaCar.color}</td>
+                    <td>mazda</td>
                 </tr>
          </table>
          `
-       
-            break;
+            return;
             case "pego":
                 let pegoCar = new Pego(wheels.value,engine.value,color.value)
                 container.innerHTML = 
@@ -109,20 +112,23 @@ switch (typeColor.value) {
                       <th>numberOfWheels</th>
                       <th>engineCapacity</th>
                       <th>color</th>
+                      <th>type of car</th>
                  </tr>
                  <tr>
                       <td>${pegoCar.numberOfWheels}</td>
                       <td>${pegoCar.engineCapacity}</td>
                       <td>${pegoCar.color}</td>
+                      <td>pego</td>
+
                 </tr>
             </table>
-                 `
-            break;
+            `
+            return;
     
         default:
-            
+            container.innerHTML = ""
             alert("there is not types of cars")
             
-            break;
+            return;
     }
     }
