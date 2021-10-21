@@ -11,11 +11,11 @@ class Cars{
         return `number Of Wheels:${this.engineCapacity} engine Capacity:${this.engineCapacity} color:${this.color}`
     }
     static getNumberOfWheels(array){
-    let max = array[0] 
-    array.forEach(element => {
-       if(max.engineCapacity < element.engineCapacity) max = element;
+    let biggesEngine = array[0] 
+    array.forEach(engineItem => {
+       if(biggesEngine.engineCapacity < engineItem.engineCapacity) biggesEngine = engineItem;
     });
-    return max
+    return biggesEngine
   }
 }
 const car1 = new Cars(5,1600,"green")
